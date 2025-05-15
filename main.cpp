@@ -2,9 +2,42 @@
 #include <vector>
 #include <opencv2/opencv.hpp>
 #include <cmath>
+#include <filesystem>
 #include "orb_detector.h"
 #include "shape_detector.h"
 #include "sign_detector.h"
+
+// Funcție pentru încărcarea template-urilor din director
+std::vector<std::string> loadTemplatesFromDirectory(const std::string& directoryPath) {
+    std::vector<std::string> templatePaths;
+
+    try {
+        // Verificăm dacă directorul există
+        if (!std::filesystem::exists(directoryPath)) {
+            std::cerr << "Eroare: Directorul nu există: " << directoryPath << std::endl;
+            return templatePaths;
+        }
+
+        // Iterăm prin toate fișierele din director
+        for (const auto& entry : std::filesystem::directory_iterator(directoryPath)) {
+            if (entry.is_regular_file()) {
+                std::string extension = entry.path().extension().string();
+                // Verificăm doar fișierele de imagine
+                if (extension == ".jpg" || extension == ".jpeg" || extension == ".png" ||
+                    extension == ".bmp" || extension == ".tiff" || extension == ".webp") {
+                    templatePaths.push_back(entry.path().string());
+                    std::cout << "S-a încărcat template-ul: " << entry.path().string() << std::endl;
+                }
+            }
+        }
+
+        std::cout << "Total template-uri încărcate: " << templatePaths.size() << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << "Eroare la încărcarea template-urilor: " << e.what() << std::endl;
+    }
+
+    return templatePaths;
+}
 
 int main() {
     // Încărcarea imaginii hardcodate
@@ -23,6 +56,21 @@ int main() {
     // Crearea detectorului de semne
     SignDetector signDetector;
 
+    // Încărcarea template-urilor pentru semnele de circulație
+    std::string templateDir = R"(C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\templates)";
+    std::cout << "Încărcare template-uri din directorul: " << templateDir << std::endl;
+
+    std::vector<std::string> templatePaths = loadTemplatesFromDirectory(templateDir);
+
+    if (templatePaths.empty()) {
+        std::cout << "Atenție: Nu s-au găsit template-uri! Metoda ORB nu va fi utilizată eficient." << std::endl;
+        std::cout << "Poți crea un director 'templates' și adaugă semne de circulație pentru a îmbunătăți detecția." << std::endl;
+    } else {
+        // Încărcăm template-urile în detector
+        signDetector.loadTemplates(templatePaths);
+        std::cout << "Template-uri încărcate cu succes!" << std::endl;
+    }
+
     // Detectarea semnelor
     std::vector<cv::Rect> detectedSigns = signDetector.detectSigns(inputImage);
 
@@ -31,6 +79,14 @@ int main() {
     for (const auto& signRect : detectedSigns) {
         // Desenarea unui dreptunghi în jurul semnului detectat
         cv::rectangle(resultImage, signRect, cv::Scalar(0, 255, 0), 2);
+
+        // Adăugăm text descriptiv
+        std::string label = "Semn detectat";
+        int fontFace = cv::FONT_HERSHEY_SIMPLEX;
+        double fontScale = 0.5;
+        int thickness = 1;
+        cv::putText(resultImage, label, cv::Point(signRect.x, signRect.y - 5),
+                    fontFace, fontScale, cv::Scalar(0, 255, 0), thickness);
     }
 
     // Afișarea imaginii rezultat
@@ -39,6 +95,9 @@ int main() {
 
     // Salvarea imaginii rezultat
     cv::imwrite("detected_signs.jpg", resultImage);
+
+    std::cout << "S-au detectat " << detectedSigns.size() << " semne de circulație." << std::endl;
+    std::cout << "Imaginea rezultată a fost salvată ca 'detected_signs.jpg'" << std::endl;
 
     cv::waitKey(0);
     cv::destroyAllWindows();
