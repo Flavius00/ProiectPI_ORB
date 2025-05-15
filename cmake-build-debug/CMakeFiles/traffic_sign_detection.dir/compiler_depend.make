@@ -284,6 +284,10 @@ CMakeFiles\traffic_sign_detection.dir\main.cpp.obj: C:\opencv\build\include\open
 CMakeFiles\traffic_sign_detection.dir\main.cpp.obj: C:\opencv\build\include\opencv2\video.hpp
 CMakeFiles\traffic_sign_detection.dir\main.cpp.obj: C:\opencv\build\include\opencv2\video\tracking.hpp
 CMakeFiles\traffic_sign_detection.dir\main.cpp.obj: C:\opencv\build\include\opencv2\video\background_segm.hpp
+CMakeFiles\traffic_sign_detection.dir\main.cpp.obj: "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\filesystem"
+CMakeFiles\traffic_sign_detection.dir\main.cpp.obj: "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\locale"
+CMakeFiles\traffic_sign_detection.dir\main.cpp.obj: "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xlocbuf"
+CMakeFiles\traffic_sign_detection.dir\main.cpp.obj: "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xlocmes"
 CMakeFiles\traffic_sign_detection.dir\main.cpp.obj: C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\orb_detector.h
 CMakeFiles\traffic_sign_detection.dir\main.cpp.obj: C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\shape_detector.h
 CMakeFiles\traffic_sign_detection.dir\main.cpp.obj: C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\sign_detector.h
@@ -1194,6 +1198,8 @@ C:\opencv\build\include\opencv2\flann\autotuned_index.h:
 
 "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vadefs.h":
 
+"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\filesystem":
+
 "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\wmmintrin.h":
 
 "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\concurrencysal.h":
@@ -1331,6 +1337,8 @@ C:\opencv\build\include\opencv2\stitching\detail\motion_estimators.hpp:
 "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cstdint":
 
 "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdint.h":
+
+"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xlocmes":
 
 "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\streambuf":
 
@@ -1689,6 +1697,10 @@ C:\opencv\build\include\opencv2\stitching\detail\seam_finders.hpp:
 C:\opencv\build\include\opencv2\stitching\detail\blenders.hpp:
 
 C:\opencv\build\include\opencv2\video\background_segm.hpp:
+
+"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\locale":
+
+"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xlocbuf":
 
 C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\orb_detector.h:
 

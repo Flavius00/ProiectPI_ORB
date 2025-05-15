@@ -280,6 +280,10 @@ C:/opencv/build/include/opencv2/stitching/detail/blenders.hpp
 C:/opencv/build/include/opencv2/video.hpp
 C:/opencv/build/include/opencv2/video/tracking.hpp
 C:/opencv/build/include/opencv2/video/background_segm.hpp
+C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/include/filesystem
+C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/include/locale
+C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/include/xlocbuf
+C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/include/xlocmes
 C:/Users/flavi/OneDrive/Documents/PI/ProiectPI_ORB/orb_detector.h
 C:/Users/flavi/OneDrive/Documents/PI/ProiectPI_ORB/shape_detector.h
 C:/Users/flavi/OneDrive/Documents/PI/ProiectPI_ORB/sign_detector.h

@@ -6,13 +6,13 @@ SignDetector::SignDetector() : orbDetector(500, 1.2f, 8) {
 
 std::vector<cv::Rect> SignDetector::detectSigns(const cv::Mat& image) {
     // Detectăm semnele folosind toate metodele
-    std::vector<cv::Rect> colorDetections = detectSignsByColor(image);
+    //std::vector<cv::Rect> colorDetections = detectSignsByColor(image);
     std::vector<cv::Rect> shapeDetections = detectSignsByShape(image);
     std::vector<cv::Rect> featureDetections = detectSignsByFeatures(image);
 
     // Combinăm toate detecțiile
     std::vector<cv::Rect> allDetections;
-    allDetections.insert(allDetections.end(), colorDetections.begin(), colorDetections.end());
+    //allDetections.insert(allDetections.end(), colorDetections.begin(), colorDetections.end());
     allDetections.insert(allDetections.end(), shapeDetections.begin(), shapeDetections.end());
     allDetections.insert(allDetections.end(), featureDetections.begin(), featureDetections.end());
 
