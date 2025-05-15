@@ -9,14 +9,14 @@ SignDetector::SignDetector() : orbDetector(1000, 1.2f, 8) {
 std::vector<cv::Rect> SignDetector::detectSigns(const cv::Mat& image) {
 
     std::vector<cv::Rect> shapeDetections = detectSignsByShape(image);
-    std::vector<cv::Rect> featureDetections = detectSignsByFeatures(image);
+    //std::vector<cv::Rect> featureDetections = detectSignsByFeatures(image);
 
     std::cout << "Detectii bazate pe forma: " << shapeDetections.size() << std::endl;
-    std::cout << "Detectii bazate pe ORB: " << featureDetections.size() << std::endl;
+    // std::cout << "Detectii bazate pe ORB: " << featureDetections.size() << std::endl;
 
     std::vector<cv::Rect> allDetections;
     allDetections.insert(allDetections.end(), shapeDetections.begin(), shapeDetections.end());
-    allDetections.insert(allDetections.end(), featureDetections.begin(), featureDetections.end());
+    // allDetections.insert(allDetections.end(), featureDetections.begin(), featureDetections.end());
 
     return filterOverlappingDetections(allDetections);
 }
