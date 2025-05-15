@@ -47,6 +47,7 @@ private:
     // Funcții utilitare pentru detecția semnelor
     std::vector<cv::Rect> detectSignsByColor(const cv::Mat& image);
     std::vector<cv::Rect> detectSignsByShape(const cv::Mat& image);
+    std::vector<cv::Rect> detectSignsByFeatures(const cv::Mat& image);
 
     // Funcții de preprocesare
     void preprocessTemplate(const cv::Mat& input, cv::Mat& output);
@@ -57,9 +58,6 @@ private:
 
     // Calculează IoU (Intersection over Union)
     float calculateIoU(const cv::Rect& rect1, const cv::Rect& rect2);
-
-protected:
-    std::vector<cv::Rect> detectSignsByFeatures(const cv::Mat& image);
 };
 
 #endif // SIGN_DETECTOR_H
