@@ -1,0 +1,3 @@
+C:/Users/flavi/CLionProjects/ProiectPIORB/cmake-build-debug/CMakeFiles/traffic_sign_detection.dir
+C:/Users/flavi/CLionProjects/ProiectPIORB/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/flavi/CLionProjects/ProiectPIORB/cmake-build-debug/CMakeFiles/rebuild_cache.dir

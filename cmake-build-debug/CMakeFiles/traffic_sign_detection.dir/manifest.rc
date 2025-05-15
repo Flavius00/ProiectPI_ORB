@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "C:/Users/flavi/CLionProjects/ProiectPIORB/cmake-build-debug/CMakeFiles/traffic_sign_detection.dir/embed.manifest"
