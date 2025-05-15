@@ -125,7 +125,7 @@ std::vector<cv::Rect> SignDetector::detectSignsByFeatures(const cv::Mat& image) 
             }
 
             std::vector<uchar> inliersMask;
-            cv::Mat H = cv::findHomography(dstPoints, srcPoints, cv::RANSAC, 5.0, inliersMask);
+            cv::Mat H = cv::findHomography(srcPoints, dstPoints, cv::RANSAC, 5.0, inliersMask);
             std::cout << "Homografia" << H << std::endl;
             if (!H.empty()) {
                 std::cout << "am intrat aici" << std::endl;
@@ -159,6 +159,7 @@ std::vector<cv::Rect> SignDetector::detectSignsByFeatures(const cv::Mat& image) 
                         maxY = std::max(maxY, static_cast<int>(corner.y));
                     }
                     std::cout << "minX: " << minX << " minY: " << minY << " maxX: " << maxX << " maxY: " << maxY << std::endl;
+                    std::cout << "image.cols: " << image.cols << " image.rows: " << image.rows << std::endl;
                     if (minX < maxX && minY < maxY &&
                         minX >= 0 && minY >= 0 &&
                         maxX < image.cols && maxY < image.rows) {
@@ -166,7 +167,8 @@ std::vector<cv::Rect> SignDetector::detectSignsByFeatures(const cv::Mat& image) 
                         int width = maxX - minX;
                         int height = maxY - minY;
                         float aspectRatio = static_cast<float>(width) / height;
-
+                        std::cout << "aspectRatio: " << aspectRatio << std::endl;
+                        std::cout << "width: " << width << " height: " << height << std::endl;
                         if (aspectRatio >= 0.5 && aspectRatio <= 2.0 &&
                             width >= 20 && height >= 20) {
 
