@@ -8,7 +8,7 @@
 
 int main() {
     // Încărcarea imaginii hardcodate
-    std::string imagePath = "C:\\Users\\flavi\\CLionProjects\\ProiectPIORB\\cedeaza.jpeg";
+    std::string imagePath = R"(C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\stop.jpeg)";
     cv::Mat inputImage = cv::imread(imagePath);
 
     if (inputImage.empty()) {
@@ -17,8 +17,8 @@ int main() {
     }
 
     // Afișarea imaginii originale
-    cv::namedWindow("Imagine originală", cv::WINDOW_NORMAL);
-    cv::imshow("Imagine originală", inputImage);
+    cv::namedWindow("Imagine originala", cv::WINDOW_NORMAL);
+    cv::imshow("Imagine originala", inputImage);
 
     // Crearea detectorului de semne
     SignDetector signDetector;
