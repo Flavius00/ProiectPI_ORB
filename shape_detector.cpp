@@ -124,8 +124,7 @@ std::vector<std::vector<cv::Point>> ShapeDetector::traceContours(const cv::Mat& 
 }
 
 
-std::vector<std::pair<ShapeType, std::vector<cv::Point>>> ShapeDetector::detectShapes(
-        const std::vector<std::vector<cv::Point>>& contours) {
+std::vector<std::pair<ShapeType, std::vector<cv::Point>>> ShapeDetector::detectShapes(const std::vector<std::vector<cv::Point>>& contours) {
 
     std::vector<std::pair<ShapeType, std::vector<cv::Point>>> shapes;
 
