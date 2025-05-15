@@ -25,16 +25,12 @@ class ORBDetector {
 public:
     ORBDetector(int nfeatures = 500, float scaleFactor = 1.2f, int nlevels = 8);
 
-    // Detectează puncte cheie în imagine
     std::vector<KeyPoint> detect(const cv::Mat& image);
 
-    // Calculează descriptori pentru punctele cheie date
     cv::Mat compute(const cv::Mat& image, std::vector<KeyPoint>& keypoints);
 
-    // Detectează și calculează în același timp
     std::vector<KeyPoint> detectAndCompute(const cv::Mat& image, cv::Mat& descriptors);
 
-    // Potrivește descriptori între două seturi
     std::vector<std::pair<int, int>> match(const cv::Mat& descriptors1,
                                            const cv::Mat& descriptors2,
                                            float threshold = 0.75f);
@@ -44,23 +40,17 @@ private:
     float scaleFactor;
     int nlevels;
 
-    // FAST corner detector
     std::vector<KeyPoint> detectFAST(const cv::Mat& image, int threshold = 20);
 
-    // Calculează orientarea pentru punctele cheie
     void computeOrientation(const cv::Mat& image, std::vector<KeyPoint>& keypoints);
 
-    // Calculează momentul centrat
     float calculateCenteredMoment(const cv::Mat& image, int p, int q, int cx, int cy, int radius);
 
-    // Calculează descriptorul BRIEF
     cv::Mat computeBRIEF(const cv::Mat& image, std::vector<KeyPoint>& keypoints);
 
-    // Generează modelul de perechi pentru BRIEF
     std::vector<std::pair<cv::Point, cv::Point>> generateBriefPattern(int patchSize = 31, int numPairs = 256);
 
-    // Calculează distanța Hamming între doi descriptori
     int hammingDistance(const cv::Mat& desc1, const cv::Mat& desc2);
 };
 
-#endif // ORB_DETECTOR_H
+#endif

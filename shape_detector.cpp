@@ -1,14 +1,12 @@
 #include "shape_detector.h"
 
 ShapeDetector::ShapeDetector() {
-    // Inițializarea parametrilor pentru detecția formelor
     circularityThreshold = 0.85;
     triangularityThreshold = 0.75;
     rectangularityThreshold = 0.8;
 }
 
 std::vector<std::vector<cv::Point>> ShapeDetector::detectContours(const cv::Mat& image) {
-    // Convertește imaginea la grayscale dacă este necesară
     cv::Mat grayImage;
     if (image.channels() == 3) {
         cv::cvtColor(image, grayImage, cv::COLOR_BGR2GRAY);
@@ -16,24 +14,20 @@ std::vector<std::vector<cv::Point>> ShapeDetector::detectContours(const cv::Mat&
         grayImage = image.clone();
     }
 
-    // Aplică un blur pentru a reduce zgomotul
     cv::Mat blurredImage;
     cv::GaussianBlur(grayImage, blurredImage, cv::Size(5, 5), 0);
 
-    // Aplică detecția de margini Canny
     cv::Mat edges;
     cv::Canny(blurredImage, edges, 50, 150);
 
-    // Găsește contururile din imaginea cu margini
     std::vector<std::vector<cv::Point>> contours;
     std::vector<cv::Vec4i> hierarchy;
     cv::findContours(edges, contours, hierarchy, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
 
-    // Filtrează contururile mici
     std::vector<std::vector<cv::Point>> filteredContours;
     for (const auto& contour : contours) {
         double area = cv::contourArea(contour);
-        if (area > 100) { // Filtrăm contururile foarte mici
+        if (area > 100) {
             filteredContours.push_back(contour);
         }
     }
@@ -63,12 +57,13 @@ ShapeType ShapeDetector::detectShape(const std::vector<cv::Point>& contour) {
     bool isTri = isTriangle(contour, triangularityScore);
     bool isRect = isRectangle(contour, rectangularityScore);
 
-    // Determină care formă are scorul de similaritate cel mai mare
     if (isCirc && circularityScore > triangularityScore && circularityScore > rectangularityScore) {
         return CIRCLE;
-    } else if (isTri && triangularityScore > circularityScore && triangularityScore > rectangularityScore) {
+    }
+    if (isTri && triangularityScore > circularityScore && triangularityScore > rectangularityScore) {
         return TRIANGLE;
-    } else if (isRect && rectangularityScore > circularityScore && rectangularityScore > triangularityScore) {
+    }
+    if (isRect && rectangularityScore > circularityScore && rectangularityScore > triangularityScore) {
         return RECTANGLE;
     }
 
@@ -94,25 +89,20 @@ double ShapeDetector::calculateCircularity(const std::vector<cv::Point>& contour
     double area = cv::contourArea(contour);
     double perimeter = cv::arcLength(contour, true);
 
-    // Formula pentru circularitate: 4 * pi * area / (perimeter^2)
-    // Pentru un cerc perfect, această valoare este 1
     double circularity = (4 * M_PI * area) / (perimeter * perimeter);
 
     return circularity;
 }
 
 double ShapeDetector::calculateTriangularity(const std::vector<cv::Point>& contour) {
-    // Aproximăm conturul cu un poligon
     std::vector<cv::Point> approx;
     double epsilon = 0.04 * cv::arcLength(contour, true);
     cv::approxPolyDP(contour, approx, epsilon, true);
 
-    // Verificăm dacă poligonul are 3 laturi
     if (approx.size() != 3) {
         return 0.0;
     }
 
-    // Calculăm raportul dintre aria conturului și aria triunghiului
     double contourArea = cv::contourArea(contour);
     double triangleArea = cv::contourArea(approx);
 
@@ -124,27 +114,22 @@ double ShapeDetector::calculateTriangularity(const std::vector<cv::Point>& conto
 }
 
 double ShapeDetector::calculateRectangularity(const std::vector<cv::Point>& contour) {
-    // Aproximăm conturul cu un poligon
     std::vector<cv::Point> approx;
     double epsilon = 0.04 * cv::arcLength(contour, true);
     cv::approxPolyDP(contour, approx, epsilon, true);
 
-    // Verificăm dacă poligonul are 4 laturi
     if (approx.size() != 4) {
         return 0.0;
     }
 
-    // Găsim dreptunghiul cu aria minimă care conține conturul
     cv::RotatedRect boundingRect = cv::minAreaRect(contour);
     double boundingRectArea = boundingRect.size.width * boundingRect.size.height;
 
-    // Calculăm aria conturului
     double contourArea = cv::contourArea(contour);
 
     if (boundingRectArea == 0) {
         return 0.0;
     }
 
-    // Raportul dintre aria conturului și aria dreptunghiului este o măsură a "rectangularității"
     return contourArea / boundingRectArea;
 }
