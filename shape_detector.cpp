@@ -106,11 +106,17 @@ std::vector<std::vector<cv::Point>> ShapeDetector::traceContours(const cv::Mat& 
                         }
                     }
 
-                    if (points.size() > 2 &&
-                        std::abs(current.x - start.x) <= 1 &&
-                        std::abs(current.y - start.y) <= 1) {
-                        break;
+                    if (points.size() > 3) {
+                        cv::Point first = points[0];
+                        cv::Point second = points[1];
+                        cv::Point last = points[points.size() - 1];
+                        cv::Point secondLast = points[points.size() - 2];
+
+                        if (first == secondLast && second == last) {
+                            break;
+                            }
                     }
+
                 }
 
                 if (points.size() > 10) {
