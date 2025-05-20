@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/flavi/OneDrive/Documents/PI/ProiectPI_ORB/main.cpp" "CMakeFiles/traffic_sign_detection.dir/main.cpp.obj" "msvc" "CMakeFiles/traffic_sign_detection.dir/main.cpp.obj.d"
+  "C:/Users/flavi/OneDrive/Documents/PI/ProiectPI_ORB/opencv_detector.cpp" "CMakeFiles/traffic_sign_detection.dir/opencv_detector.cpp.obj" "msvc" "CMakeFiles/traffic_sign_detection.dir/opencv_detector.cpp.obj.d"
   "C:/Users/flavi/OneDrive/Documents/PI/ProiectPI_ORB/orb_detector.cpp" "CMakeFiles/traffic_sign_detection.dir/orb_detector.cpp.obj" "msvc" "CMakeFiles/traffic_sign_detection.dir/orb_detector.cpp.obj.d"
   "C:/Users/flavi/OneDrive/Documents/PI/ProiectPI_ORB/shape_detector.cpp" "CMakeFiles/traffic_sign_detection.dir/shape_detector.cpp.obj" "msvc" "CMakeFiles/traffic_sign_detection.dir/shape_detector.cpp.obj.d"
   "C:/Users/flavi/OneDrive/Documents/PI/ProiectPI_ORB/sign_detector.cpp" "CMakeFiles/traffic_sign_detection.dir/sign_detector.cpp.obj" "msvc" "CMakeFiles/traffic_sign_detection.dir/sign_detector.cpp.obj.d"

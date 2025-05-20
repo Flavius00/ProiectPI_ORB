@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/traffic_sign_detection.dir/main.cpp.obj"
   "CMakeFiles/traffic_sign_detection.dir/main.cpp.obj.d"
+  "CMakeFiles/traffic_sign_detection.dir/opencv_detector.cpp.obj"
+  "CMakeFiles/traffic_sign_detection.dir/opencv_detector.cpp.obj.d"
   "CMakeFiles/traffic_sign_detection.dir/orb_detector.cpp.obj"
   "CMakeFiles/traffic_sign_detection.dir/orb_detector.cpp.obj.d"
   "CMakeFiles/traffic_sign_detection.dir/shape_detector.cpp.obj"

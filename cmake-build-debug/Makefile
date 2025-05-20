@@ -142,6 +142,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\traffic_sign_detection.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\traffic_sign_detection.dir\main.cpp.s
 .PHONY : main.cpp.s
 
+opencv_detector.obj: opencv_detector.cpp.obj
+.PHONY : opencv_detector.obj
+
+# target to build an object file
+opencv_detector.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\traffic_sign_detection.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\traffic_sign_detection.dir\opencv_detector.cpp.obj
+.PHONY : opencv_detector.cpp.obj
+
+opencv_detector.i: opencv_detector.cpp.i
+.PHONY : opencv_detector.i
+
+# target to preprocess a source file
+opencv_detector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\traffic_sign_detection.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\traffic_sign_detection.dir\opencv_detector.cpp.i
+.PHONY : opencv_detector.cpp.i
+
+opencv_detector.s: opencv_detector.cpp.s
+.PHONY : opencv_detector.s
+
+# target to generate assembly for a file
+opencv_detector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\traffic_sign_detection.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\traffic_sign_detection.dir\opencv_detector.cpp.s
+.PHONY : opencv_detector.cpp.s
+
 orb_detector.obj: orb_detector.cpp.obj
 .PHONY : orb_detector.obj
 
@@ -226,6 +250,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... opencv_detector.obj
+	@echo ... opencv_detector.i
+	@echo ... opencv_detector.s
 	@echo ... orb_detector.obj
 	@echo ... orb_detector.i
 	@echo ... orb_detector.s

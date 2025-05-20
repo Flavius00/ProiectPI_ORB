@@ -138,12 +138,33 @@ CMakeFiles\traffic_sign_detection.dir\sign_detector.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\traffic_sign_detection.dir\sign_detector.cpp.s /c C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\sign_detector.cpp
 <<
 
+CMakeFiles\traffic_sign_detection.dir\opencv_detector.cpp.obj: CMakeFiles\traffic_sign_detection.dir\flags.make
+CMakeFiles\traffic_sign_detection.dir\opencv_detector.cpp.obj: C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\opencv_detector.cpp
+CMakeFiles\traffic_sign_detection.dir\opencv_detector.cpp.obj: CMakeFiles\traffic_sign_detection.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/traffic_sign_detection.dir/opencv_detector.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\traffic_sign_detection.dir\opencv_detector.cpp.obj.d --working-dir=C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MICROS~1\2022\COMMUN~1\VC\Tools\MSVC\1443~1.348\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\traffic_sign_detection.dir\opencv_detector.cpp.obj /FdCMakeFiles\traffic_sign_detection.dir\ /FS -c C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\opencv_detector.cpp
+<<
+
+CMakeFiles\traffic_sign_detection.dir\opencv_detector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/traffic_sign_detection.dir/opencv_detector.cpp.i"
+	C:\PROGRA~1\MICROS~1\2022\COMMUN~1\VC\Tools\MSVC\1443~1.348\bin\Hostx64\x64\cl.exe > CMakeFiles\traffic_sign_detection.dir\opencv_detector.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\opencv_detector.cpp
+<<
+
+CMakeFiles\traffic_sign_detection.dir\opencv_detector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/traffic_sign_detection.dir/opencv_detector.cpp.s"
+	C:\PROGRA~1\MICROS~1\2022\COMMUN~1\VC\Tools\MSVC\1443~1.348\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\traffic_sign_detection.dir\opencv_detector.cpp.s /c C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\opencv_detector.cpp
+<<
+
 # Object files for target traffic_sign_detection
 traffic_sign_detection_OBJECTS = \
 "CMakeFiles\traffic_sign_detection.dir\main.cpp.obj" \
 "CMakeFiles\traffic_sign_detection.dir\orb_detector.cpp.obj" \
 "CMakeFiles\traffic_sign_detection.dir\shape_detector.cpp.obj" \
-"CMakeFiles\traffic_sign_detection.dir\sign_detector.cpp.obj"
+"CMakeFiles\traffic_sign_detection.dir\sign_detector.cpp.obj" \
+"CMakeFiles\traffic_sign_detection.dir\opencv_detector.cpp.obj"
 
 # External object files for target traffic_sign_detection
 traffic_sign_detection_EXTERNAL_OBJECTS =
@@ -152,6 +173,7 @@ traffic_sign_detection.exe: CMakeFiles\traffic_sign_detection.dir\main.cpp.obj
 traffic_sign_detection.exe: CMakeFiles\traffic_sign_detection.dir\orb_detector.cpp.obj
 traffic_sign_detection.exe: CMakeFiles\traffic_sign_detection.dir\shape_detector.cpp.obj
 traffic_sign_detection.exe: CMakeFiles\traffic_sign_detection.dir\sign_detector.cpp.obj
+traffic_sign_detection.exe: CMakeFiles\traffic_sign_detection.dir\opencv_detector.cpp.obj
 traffic_sign_detection.exe: CMakeFiles\traffic_sign_detection.dir\build.make
 traffic_sign_detection.exe: C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib
 traffic_sign_detection.exe: C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib
@@ -170,7 +192,7 @@ traffic_sign_detection.exe: C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib
 traffic_sign_detection.exe: C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib
 traffic_sign_detection.exe: C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib
 traffic_sign_detection.exe: CMakeFiles\traffic_sign_detection.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable traffic_sign_detection.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable traffic_sign_detection.exe"
 	"C:\Program Files\JetBrains\CLion 2024.3.3\bin\cmake\win\x64\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\traffic_sign_detection.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100226~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100226~1.0\x64\mt.exe --manifests -- C:\PROGRA~1\MICROS~1\2022\COMMUN~1\VC\Tools\MSVC\1443~1.348\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\traffic_sign_detection.dir\objects1.rsp @<<
  /out:traffic_sign_detection.exe /implib:traffic_sign_detection.lib /pdb:C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\cmake-build-debug\traffic_sign_detection.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib C:\opencv\build\x64\vc16\lib\opencv_world4110d.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

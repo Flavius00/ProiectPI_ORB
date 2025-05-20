@@ -36,7 +36,7 @@ std::vector<std::string> loadTemplatesFromDirectory(const std::string& directory
 }
 
 int main() {
-    std::string imagePath = R"(C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\pericol.jpeg)";
+    std::string imagePath = R"(C:\Users\flavi\OneDrive\Documents\PI\ProiectPI_ORB\cedeaza.jpeg)";
     cv::Mat inputImage = cv::imread(imagePath);
 
     if (inputImage.empty()) {

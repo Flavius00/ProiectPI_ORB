@@ -13,6 +13,8 @@ add_executable(traffic_sign_detection
         orb_detector.cpp
         shape_detector.cpp
         sign_detector.cpp
+        opencv_detector.h
+        opencv_detector.cpp
 )
 
 # Leagă bibliotecile OpenCV

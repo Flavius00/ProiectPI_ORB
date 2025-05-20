@@ -284,6 +284,10 @@ C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.3480
 C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/include/locale
 C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/include/xlocbuf
 C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/include/xlocmes
+C:/Users/flavi/OneDrive/Documents/PI/ProiectPI_ORB/sign_detector.h
 C:/Users/flavi/OneDrive/Documents/PI/ProiectPI_ORB/orb_detector.h
 C:/Users/flavi/OneDrive/Documents/PI/ProiectPI_ORB/shape_detector.h
-C:/Users/flavi/OneDrive/Documents/PI/ProiectPI_ORB/sign_detector.h
+C:/Users/flavi/OneDrive/Documents/PI/ProiectPI_ORB/opencv_detector.h
+C:/Users/flavi/OneDrive/Documents/PI/ProiectPI_ORB/detection_evaluator.h
+C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/include/fstream
+C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/include/__msvc_filebuf.hpp
