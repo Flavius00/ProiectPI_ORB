@@ -1,13 +1,14 @@
 #include "opencv_detector.h"
+#include "shape_type.h"
 
-ShapeDetector::ShapeDetector() {
+OpenCVShapeDetector::OpenCVShapeDetector() {
     // Inițializarea parametrilor pentru detecția formelor
     circularityThreshold = 0.85;
     triangularityThreshold = 0.75;
     rectangularityThreshold = 0.8;
 }
 
-std::vector<std::vector<cv::Point>> ShapeDetector::detectContours(const cv::Mat& image) {
+std::vector<std::vector<cv::Point>> OpenCVShapeDetector::detectContours(const cv::Mat& image) {
     // Convertește imaginea la grayscale dacă este necesară
     cv::Mat grayImage;
     if (image.channels() == 3) {
@@ -41,9 +42,8 @@ std::vector<std::vector<cv::Point>> ShapeDetector::detectContours(const cv::Mat&
     return filteredContours;
 }
 
-std::vector<std::pair<ShapeType, std::vector<cv::Point>>> ShapeDetector::detectShapes(
+std::vector<std::pair<ShapeType, std::vector<cv::Point>>> OpenCVShapeDetector::detectShapes(
     const std::vector<std::vector<cv::Point>>& contours) {
-
     std::vector<std::pair<ShapeType, std::vector<cv::Point>>> shapes;
 
     for (const auto& contour : contours) {
@@ -54,7 +54,7 @@ std::vector<std::pair<ShapeType, std::vector<cv::Point>>> ShapeDetector::detectS
     return shapes;
 }
 
-ShapeType ShapeDetector::detectShape(const std::vector<cv::Point>& contour) {
+ShapeType OpenCVShapeDetector::detectShape(const std::vector<cv::Point>& contour) {
     double circularityScore = 0.0;
     double triangularityScore = 0.0;
     double rectangularityScore = 0.0;
@@ -65,43 +65,43 @@ ShapeType ShapeDetector::detectShape(const std::vector<cv::Point>& contour) {
 
     // Determină care formă are scorul de similaritate cel mai mare
     if (isCirc && circularityScore > triangularityScore && circularityScore > rectangularityScore) {
-        return CIRCLE;
+        return ShapeType::CIRCLE;
     } else if (isTri && triangularityScore > circularityScore && triangularityScore > rectangularityScore) {
-        return TRIANGLE;
+        return ShapeType::TRIANGLE;
     } else if (isRect && rectangularityScore > circularityScore && rectangularityScore > triangularityScore) {
-        return RECTANGLE;
+        return ShapeType::RECTANGLE;
     }
 
-    return UNKNOWN;
+    return ShapeType::UNKNOWN;
 }
 
-bool ShapeDetector::isCircle(const std::vector<cv::Point>& contour, double& similarityScore) {
+bool OpenCVShapeDetector::isCircle(const std::vector<cv::Point>& contour, double& similarityScore) {
     similarityScore = calculateCircularity(contour);
     return similarityScore > circularityThreshold;
 }
 
-bool ShapeDetector::isTriangle(const std::vector<cv::Point>& contour, double& similarityScore) {
+bool OpenCVShapeDetector::isTriangle(const std::vector<cv::Point>& contour, double& similarityScore) {
     similarityScore = calculateTriangularity(contour);
     return similarityScore > triangularityThreshold;
 }
 
-bool ShapeDetector::isRectangle(const std::vector<cv::Point>& contour, double& similarityScore) {
+bool OpenCVShapeDetector::isRectangle(const std::vector<cv::Point>& contour, double& similarityScore) {
     similarityScore = calculateRectangularity(contour);
     return similarityScore > rectangularityThreshold;
 }
 
-double ShapeDetector::calculateCircularity(const std::vector<cv::Point>& contour) {
+double OpenCVShapeDetector::calculateCircularity(const std::vector<cv::Point>& contour) {
     double area = cv::contourArea(contour);
     double perimeter = cv::arcLength(contour, true);
 
     // Formula pentru circularitate: 4 * pi * area / (perimeter^2)
     // Pentru un cerc perfect, această valoare este 1
-    double circularity = (4 * M_PI * area) / (perimeter * perimeter);
+    double circularity = (4 * 3.14159265358979323846 * area) / (perimeter * perimeter);
 
     return circularity;
 }
 
-double ShapeDetector::calculateTriangularity(const std::vector<cv::Point>& contour) {
+double OpenCVShapeDetector::calculateTriangularity(const std::vector<cv::Point>& contour) {
     // Aproximăm conturul cu un poligon
     std::vector<cv::Point> approx;
     double epsilon = 0.04 * cv::arcLength(contour, true);
@@ -123,7 +123,7 @@ double ShapeDetector::calculateTriangularity(const std::vector<cv::Point>& conto
     return contourArea / triangleArea;
 }
 
-double ShapeDetector::calculateRectangularity(const std::vector<cv::Point>& contour) {
+double OpenCVShapeDetector::calculateRectangularity(const std::vector<cv::Point>& contour) {
     // Aproximăm conturul cu un poligon
     std::vector<cv::Point> approx;
     double epsilon = 0.04 * cv::arcLength(contour, true);

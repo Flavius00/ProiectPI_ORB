@@ -1,7 +1,5 @@
 #include "shape_detector.h"
-#include <iostream>
-#include <limits>
-#include <queue>
+#include "shape_type.h"
 
 ShapeDetector::ShapeDetector() {
     circularityThreshold = 0.85;
@@ -152,16 +150,16 @@ ShapeType ShapeDetector::detectShape(const std::vector<cv::Point>& contour) {
     bool isRect = isRectangle(contour, rectangularityScore);
 
     if (isCirc && circularityScore > triangularityScore && circularityScore > rectangularityScore) {
-        return CIRCLE;
+        return ShapeType::CIRCLE;
     }
     if (isTri && triangularityScore > circularityScore && triangularityScore > rectangularityScore) {
-        return TRIANGLE;
+        return ShapeType::TRIANGLE;
     }
     if (isRect && rectangularityScore > circularityScore && rectangularityScore > triangularityScore) {
-        return RECTANGLE;
+        return ShapeType::RECTANGLE;
     }
 
-    return UNKNOWN;
+    return ShapeType::UNKNOWN;
 }
 
 bool ShapeDetector::isCircle(const std::vector<cv::Point>& contour, double& similarityScore) {

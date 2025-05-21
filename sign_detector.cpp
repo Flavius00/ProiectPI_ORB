@@ -1,6 +1,11 @@
 #include "sign_detector.h"
 #include <iostream>
 
+SignDetector::SignDetector() {
+    // Initialize default ORB parameters if needed
+    minMatchesRequired = 5;
+    matchDistanceRatio = 0.8f;
+}
 
 std::vector<cv::Rect> SignDetector::detectSigns(const cv::Mat& image) {
 
@@ -26,7 +31,7 @@ std::vector<cv::Rect> SignDetector::detectSignsByShape(const cv::Mat& image) {
         ShapeType type = shape.first;
         const std::vector<cv::Point>& contour = shape.second;
 
-        if (type == CIRCLE || type == TRIANGLE || type == RECTANGLE) {
+        if (type == ShapeType::CIRCLE || type == ShapeType::TRIANGLE || type == ShapeType::RECTANGLE) {
             cv::Rect boundingRect = cv::boundingRect(contour);
 
             if (boundingRect.width >= 20 && boundingRect.height >= 20) {

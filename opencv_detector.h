@@ -4,16 +4,12 @@
 #include <opencv2/opencv.hpp>
 #include <vector>
 
-enum ShapeType {
-    CIRCLE,
-    TRIANGLE,
-    RECTANGLE,
-    UNKNOWN
-};
+#include "shape_type.h"
 
-class ShapeDetector {
+
+class OpenCVShapeDetector {
 public:
-    ShapeDetector();
+    OpenCVShapeDetector();
 
     // Detectează contururi în imagine
     std::vector<std::vector<cv::Point>> detectContours(const cv::Mat& image);
