@@ -60,7 +60,7 @@
 				{
 					"backtrace" : 3,
 					"isSystem" : true,
-					"path" : "C:/opencv/build/include"
+					"path" : "D:/opencv/build/include"
 				}
 			],
 			"language" : "CXX",
@@ -96,82 +96,82 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
+				"fragment" : "D:\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110d.lib",
 				"role" : "libraries"
 			},
 			{
