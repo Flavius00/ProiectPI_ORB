@@ -3,7 +3,6 @@
 
 #include <opencv2/opencv.hpp>
 #include <vector>
-#include "orb_detector.h"
 #include "shape_detector.h"
 
 class SignDetector {
@@ -20,22 +19,12 @@ public:
     }
 
 private:
-    ORBDetector orbDetector;
 
     ShapeDetector shapeDetector;
 
     int minMatchesRequired;
     float matchDistanceRatio;
 
-    struct SignTemplate {
-        cv::Mat image;
-        std::vector<KeyPoint> keypoints;
-        cv::Mat descriptors;
-        ShapeType shape;
-        std::string originalPath;
-    };
-
-    std::vector<SignTemplate> templates;
 
     std::vector<cv::Rect> detectSignsByShape(const cv::Mat& image);
     std::vector<cv::Rect> detectSignsByFeatures(const cv::Mat& image);

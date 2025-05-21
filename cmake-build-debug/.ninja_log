@@ -1,6 +1,10 @@
 # ninja log v6
-2	143	7690322006791210	build.ninja	b151300331ea35f1
+2	143	7695489496689178	build.ninja	b151300331ea35f1
 10	1116	7690299302347111	CMakeFiles/traffic_sign_detection.dir/main.cpp.obj	cd14fdd23213a921
 26	1201	7690299302502590	CMakeFiles/traffic_sign_detection.dir/sign_detector.cpp.obj	dd4f6fd14aa9ebef
 29	1177	7690299102897094	CMakeFiles/traffic_sign_detection.dir/shape_detector.cpp.obj	3c78ca3ec2b80662
 18	1212	7690299302428142	CMakeFiles/traffic_sign_detection.dir/orb_detector.cpp.obj	55d473ee2af6df8e
+24	1454	7695489837382293	CMakeFiles/traffic_sign_detection.dir/shape_detector.cpp.obj	a4d915579ddc91cf
+19	1485	7695489837332282	CMakeFiles/traffic_sign_detection.dir/orb_detector.cpp.obj	54617e4ababcc37c
+29	1515	7695489837432281	CMakeFiles/traffic_sign_detection.dir/sign_detector.cpp.obj	9288f44b115ec0d9
+13	1612	7695489837272275	CMakeFiles/traffic_sign_detection.dir/main.cpp.obj	57bdcd246621bed4

@@ -10,7 +10,6 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 # Creează executabilul
 add_executable(traffic_sign_detection
         main.cpp
-        orb_detector.cpp
         shape_detector.cpp
         sign_detector.cpp
         opencv_detector.h
